@@ -104,21 +104,21 @@ def reservation_system(age, event_code, reservation_date):
     date_msg = "선택하신 날짜에는 예약할 수 없습니다."
     
     # E1
-    if event_code == event_code[0]:
+    if event == event_code[0]:
         if age >= 18:
             return suc_msg
         else :
-            return error_msg
+            return age_msg
         
     # E2
-    elif event_code == event_code[1]:
+    elif event == event_code[1]:
         if reservation_date % 2 == 0:
             return suc_msg
         else:
             return date_msg
         
     # E3 
-    elif event_code == event_code[2]:
+    elif event == event_code[2]:
         if age >= 16 and age % 7 == 0:
             return suc_msg
         else :
@@ -128,10 +128,10 @@ def reservation_system(age, event_code, reservation_date):
         return error_msg
     
 age = int(input())
-event_code = input()
+event = input()
 reservation_date = int(input())
 
-result = reservation_system(age, event_code, reservation_date)
+result = reservation_system(age, event, reservation_date)
 
 print(result)
         
